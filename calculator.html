@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<style>
+.container{
+    width: 430px; 
+
+height: 470px;
+    margin:60px auto;
+    padding:10px;
+    border-radius: 30px 30px 30px 30px;
+    background-color:#FFF;
+    box-shadow:5px 5px 5px 5px gray;
+    }
+    button{
+      background-color: crimson;
+    }
+    button:hover{
+background-color: red;
+    }
+
+</style>
+<body>
+<div align="center" class="container " >
+  <table> 
+ <input type="text"placeholder="0" style="width: 400px;height: 70px;border-radius: 10px; background-color:#B8D8BE;margin-top:25px; text-align: right;font-size: xxx-large ;font-family: 'digital-clock-font';margin-bottom: 10px;" id="n1"><br></br>
+ 
+ <tr>
+   <td> <button type="submit"value="C" onclick="clr()"style="width: 80px; height: 40px;border-radius: 5px; red;font-size: 25px;color: #fff;  box-shadow: 2px 3px crimson;margin-right:20px  ;margin-left:15px;">C</button></td>
+  <td><input type="button"value="." onclick="dis('.')" style="width: 80px; height: 40px;border-radius: 5px;background-color:white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-right:20px  ;"></td>
+    <td><input type="button"value="/"onclick="dis('/')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-right:20px  ;"></td>
+   <td><input type="button"value="X" onclick="dis('*')"style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000; box-shadow: 2px 3px grey;margin-right:20px  ;"></td>
+  </tr>
+    <tr><td><input type="button"value="7"onclick="dis('7')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white; font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;margin-left: 15PX;"></td>
+    <td> <input type="button"value="8" onclick="dis('8')"style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;   box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+  <td> <input type="button"value="9"onclick="dis('9')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;   box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+  <td><input type="button"value="-" onclick="dis('-')"style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;   box-shadow: 2px 3px grey;margin-top: 20px;">
+  </td></tr>
+   <tr> <td><input type="button"value="4" onclick="dis('4')"style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;margin-left: 15PX;"></td>
+   <td> <input type="button"value="5" onclick="dis('5')"style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+  <td> <input type="button"value="6" onclick="dis('6')"style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+  <td><input type="button"value="+"onclick="dis('+')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;">
+  </td></tr>
+    <tr>
+      <td> <input type="button"value="1"onclick="dis('1')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;margin-left: 15PX;"></td>
+      <td><input type="button"value="2"onclick="dis('2')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+      <td><input type="button"value="3"onclick="dis('3')" style="width: 80px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+      <td rowspan="2">  <input type="button"value="=" onclick="solve()" style="width: 80px; height: 100px;border-radius: 5px;background-color: #3895d3;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;"></td>
+    </tr>
+      <tr>
+      <td colspan="2"> <input type="button"value="0" onclick="dis('0')"style="width: 180px; height: 40px;border-radius: 5px;background-color: white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;margin-left: 15PX;"></td>
+        <td> <input type="button"value="%" onclick="dis('%')"style="width: 80px; height: 40px;border-radius: 5px;background-color:white;font-size: 25px;color: #000;  box-shadow: 2px 3px grey;margin-top: 20px;">
+  </td>
+  </tr>
+
+    
+
+</div>
+</table>
+<p style="width: 200px;height: 25px;margin-top: 20px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><b>created by Taufique</b> </p> 
+</body>
+<script>
+  function dis(val){
+			document.getElementById("n1").value+=val;
+		}
+    function clr(){
+			document.getElementById("n1").value = "";
+
+		}
+    function solve()
+		{
+			var x = document.getElementById("n1").value;
+			var y = eval(x);
+			document.getElementById("n1").value = y;
+		}
+
+</script>
+
+</html>
